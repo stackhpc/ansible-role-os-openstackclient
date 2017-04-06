@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  author: Mark Goddard
+  description: >
+    Role to install the python python-openstackclient module
+  company: StackHPC Ltd
+  license: Apache2
+  min_ansible_version: 2.0
+  platforms:
+    - name: EL
+      versions:
+        - 7
+  galaxy_tags:
+    - cloud
+    - openstack
+    - openstackclient
+    - python
+
+dependencies: []
