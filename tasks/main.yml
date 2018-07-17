@@ -4,10 +4,24 @@
     name: epel-release
     state: installed
   become: True
-  when: os_openstackclient_install_epel | bool
+  when:
+    - os_openstackclient_install_epel | bool
+    - ansible_distribution == "CentOS"
+
+- name: Set fact containing debian specific packages
+  set_fact:
+    os_openstackclient_package_dependencies: "{{ os_openstackclient_package_dependencies_debian }}"
+  when:
+    - ansible_os_family == "Debian"
+
+- name: Set fact containing redhat specific packages
+  set_fact:
+    os_openstackclient_package_dependencies: "{{ os_openstackclient_package_dependencies_redhat }}"
+  when:
+    - ansible_os_family == "RedHat"
 
 - name: Ensure required packages are installed
-  yum:
+  package:
     name: "{{ item }}"
     state: installed
   become: True
