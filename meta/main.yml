@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: os-openstackclient
+  #role_name: os_openstackclient
   author: Mark Goddard
   description: >
     Role to install the python python-openstackclient module
