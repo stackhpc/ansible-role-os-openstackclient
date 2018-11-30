@@ -19,10 +19,9 @@
 
 - name: Ensure required packages are installed
   package:
-    name: "{{ item }}"
+    name: "{{ os_openstackclient_package_dependencies }}"
     state: present
   become: True
-  with_items: "{{ os_openstackclient_package_dependencies }}"
   when: os_openstackclient_install_package_dependencies | bool
 
 - name: Check whether the virtualenv directory exists
