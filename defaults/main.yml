@@ -8,5 +8,8 @@ os_openstackclient_install_epel: True
 # Whether to install package dependencies.
 os_openstackclient_install_package_dependencies: True
 
-# Version of python-openstackclient to install, or latest if empty.
+# State of the openstackclient package.
+os_openstackclient_state: present
+
+# Version of python-openstackclient to install, or unrestricted if empty.
 os_openstackclient_version:
