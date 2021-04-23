@@ -46,7 +46,7 @@
           not os_openstackclient_venv_stat.stat.writeable
   when: os_openstackclient_venv is not none
 
-- name: Ensure the latest version of pip is installed
+- name: Ensure the latest version of pip and setuptools are installed
   pip:
     name: "{{ item.name }}"
     state: latest
@@ -54,6 +54,7 @@
     virtualenv_python: "{{ 'python' ~ ansible_python.version.major ~ '.' ~ ansible_python.version.minor if os_openstackclient_venv else omit }}"
   with_items:
     - { name: pip }
+    - { name: setuptools }
 
 - name: Ensure required Python packages are installed
   pip:
