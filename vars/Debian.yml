@@ -4,6 +4,6 @@ os_openstackclient_package_dependencies:
   - gcc
   - libffi-dev
   - libssl-dev
-  - python{% if ansible_python.version.major == 3 %}3{% endif %}-dev
-  - python{% if ansible_python.version.major == 3 %}3{% endif %}-pip
-  - python{% if ansible_python.version.major == 3 %}3{% endif %}-virtualenv
+  - python{% if ansible_facts.python.version.major == 3 %}3{% endif %}-dev
+  - python{% if ansible_facts.python.version.major == 3 %}3{% endif %}-pip
+  - python{% if ansible_facts.python.version.major == 3 %}3{% endif %}-virtualenv
