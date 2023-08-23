@@ -18,6 +18,9 @@ galaxy_info:
     - name: Debian
       versions:
         - all
+    - name: macOS
+      versions:
+        - all
   galaxy_tags:
     - cloud
     - openstack

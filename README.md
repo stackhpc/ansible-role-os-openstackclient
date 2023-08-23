@@ -6,7 +6,7 @@ This role can be used to install the python package ``python-openstackclient``.
 Requirements
 ------------
 
-None
+Linux - none, macOS - brew.sh
 
 Role Variables
 --------------
