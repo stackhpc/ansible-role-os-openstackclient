@@ -22,7 +22,7 @@
   package:
     name: "{{ os_openstackclient_package_dependencies }}"
     state: present
-  become: True
+  become: "{{ ansible_facts.system != 'Darwin' }}"
   when: os_openstackclient_install_package_dependencies | bool
 
 - block:
